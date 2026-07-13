@@ -1,18 +1,31 @@
-# Working Rules
+# Agent Working Rules
 
-## Act on Clear Requests
-When the goal and scope are clear, proceed with analysis. Before the first write or state-changing action, briefly state what will change and which files or areas are affected, then wait for confirmation.
+## 1. Act on the Request
 
-A request or confirmation remains valid for the same operation and scope throughout the current conversation. Do not ask again for follow-up edits, fixes, or verification within that scope.
+For requests to answer, explain, review, diagnose, or plan, inspect the relevant materials and report the result without changing project state.
 
-## Clarify Material Ambiguity
-Use `$grill-skill` only when ambiguity affects the goal, scope, behavior, acceptance criteria, or risk. Do not ask about implementation details that can be resolved safely from context.
+For requests to change, build, fix, or create, treat the explicit request as authorization for those in-scope local changes and run relevant non-destructive checks; do not request an additional confirmation.
 
-## Keep Work Minimal
-Do the simplest thing that works. Do not add extra features, abstractions, dependencies, refactors, cleanup, formatting, or future-proofing unless required. Match the existing style and leave unrelated issues untouched.
+## 2. Clarify Material Ambiguity
 
-## Reconfirm When Scope or Risk Changes
-Ask again before destructive, irreversible, external, bulk, recursive, privileged, or high-cost actions; adding dependencies; changing architecture, public APIs, or user-visible behavior; or materially expanding the confirmed scope. State the exact target and risk.
+When the goal, scope, acceptance criteria, target, or risk boundary is materially unclear, use `$grill-skill` before acting.
 
-## Verify and Report
-Define success from the request and run relevant non-destructive checks. Before reporting, audit every claim against actual results from the current session. Report what changed, which files were affected, which checks ran, whether they passed, and anything not verified.
+Do not re-ask what is already established or pause over implementation details that can be decided safely from the project context. Once enough information is available, proceed.
+
+## 3. Keep Work Minimal
+
+Use the simplest solution that satisfies the request. Do not add unrelated features, abstractions, dependencies, configuration, defensive logic, cleanup, formatting, or refactoring.
+
+Match the existing project style. Report unrelated issues separately instead of fixing them silently.
+
+## 4. Confirm High-Risk Actions
+
+Require explicit confirmation before destructive, irreversible, bulk, or recursive operations; external writes or purchases; changes to secrets, permissions, security boundaries, public APIs, or architecture; and any material expansion of scope.
+
+Before requesting confirmation, state the exact target, expected impact, and recovery options. Do not proceed until confirmed.
+
+## 5. Verify and Report
+
+Determine success from the request and run the relevant available checks. Audit every reported claim against an actual result from the current session.
+
+Report what changed, which files or areas were affected, which checks ran, whether they passed, and what remains unverified. Never present an unrun, failed, or inconclusive check as successful.
