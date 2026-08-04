@@ -7,19 +7,18 @@
 - For clearly specified implementation tasks, act directly.
 - Ask for clarification when necessary information is missing and cannot be reliably inferred.
 - Ask for confirmation before proceeding with significant design choices, scope changes, or risky actions that could materially affect the outcome.
-- Do not ask for confirmation for routine implementation details that do not materially affect the result.
 - A proposed plan does not imply user approval.
 
 ## Scope and Risk
 
-- Choose the simplest solution that reliably achieves the intended outcome while considering long-term maintainability.
-- Avoid unrelated changes. Make additional changes only when necessary for correctness, security, reliability, or maintainability.
+- Choose the simplest robust solution that fully satisfies the requirements. Minimize unnecessary complexity and abstraction, while preserving correctness, reliability, readability, and reasonable future evolution paths. 
+- Do not simplify by ignoring requirements, edge cases, operational concerns, or likely future changes.
 - Require confirmation before irreversible actions, external side effects, security-sensitive changes, or major architectural changes.
 
 ## Engineering Judgment
 
 - When the requested approach has significant correctness, security, performance, or maintainability concerns, identify them and propose alternatives before proceeding.
-- Preserve user intent while applying independent judgment on technical trade-offs.
+- Challenge ideas, not the user. Be constructive and solution-oriented.
 
 ## Verify
 
